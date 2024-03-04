@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bike And Care -- Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+
+<style>
+    .bg-black {
+      background-color: black;
+    }
+    .bg-black-text {
+      color: white;
+    }
+    .off-white-text {
+      color: #f8f9fa; /* Off-white color code */
+    }
+  </style>
+  <div class="container mt-3">
+
+    <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container-fluid">
+
+          <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="/fetch-Customers-of-Service-Station">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/search">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search-service">Bookings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search-service-by-car-number">Search Service-Bike Number</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+  <div class="container mt-3">
+    <div class="mt-4 p-5 bg-black bg-black-text rounded">
+      <h1 class="dark-red-text">Bike And Care</h1>
+      <p class="off-white-text">
+    </div>
+   <div class="mb-3 mt-3">
+    <h2>Add Customer Details</h2>
+    <form action="/add-customer-service-station" method="post">
+      <div class="mb-3 mt-3">
+        <label for="name">name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Customer Name" name="name">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" class="form-control" id="phone_number" placeholder="Enter Phone Number" name="phone_number">
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="email">email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Customer Email" name="email">
+      </div>
+    <h5>bike Company</h5>
+     <select name="choice">
+  <option value="first">RE</option>
+  <option value="second">Jawa</option>
+  <option value="third">Kawaski</option>
+  <option value="third">KTM</option>
+  <option value="third">Suzuki</option>
+  <option value="third">Ola</option>
+  <option value="third">TVS</option>
+  <option value="third">Yamaha</option>
+  <option value="third">Hero</option>
+  <option value="third">Ducatti</option>
+  <option value="third">Harley Davidson</option>
+  <option value="third">BMW</option>
+  <option value="third">Honda</option>
+</select>
+
+
+
+
+      <div class="mb-3">
+        <label for="bike_model">bike model:</label>
+        <input type="text" class="form-control" id="bike_model" placeholder="Enter bike model" name="bike_model">
+      </div>
+        <div class="mb-3">
+        <label for="bike_model">Km run:</label>
+        <input type="number" class="form-control" id="km_run" placeholder="Enter Km run" name="km_run">
+      </div>
+        <h5>Or</h5>
+        <div class="mb-3">
+        <label for="bike_model">how many days</label>
+        <input type="number" class="form-control" id="bike_days" placeholder="Enter days till last service" name="bike_days">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" placeholder="Enter Customer Address" name="address">
+      </div>
+      <div>
+      <input type="hidden" name="service_station_email" value="{{ session['email'] }}">
+      <input type="hidden" name="service_station_id" value="{{ session['id'] }}">
+      </div>
+      <button type="submit" class="btn btn-primary mt-3" style="background-color: black;">Click</button>
+     </div>
+    </form>
+
+
+    </form>
+  </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+
+  #payment-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  input[type="text"], input[type="email"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div id="payment-form">
+  <h2>Payment Details</h2>
+  <form id="payment-form2">
+    <input type="number" placeholder="Card Number" id="card-number">
+    <input type="text" placeholder="Name on Card" id="card-name">
+    <input type="number" placeholder="Expiry Date (MM/YY)" id="expiry-date">
+    <input type="number" placeholder="CVV" id="cvv">
+    <button type="button" onclick="processPayment('card')">Pay </button>
+  </form>
+  <hr>
+  <h3>Or</h3>
+  <button type="button" onclick="processPayment('upi')">Pay with UPI</button>
+  <button type="button" onclick="processPayment('netbanking')">Pay with bank</button>
+  <button type="button" onclick="processPayment('cash')">Pay with Cash</button>
+</div>
+
+<script>
+  function processPayment(method) {
+    let paymentInfo = {};
+    if (method === 'card') {
+      paymentInfo = {
+        method: 'Card',
+        cardNumber: document.getElementById('card-number').value,
+        cardName: document.getElementById('card-name').value,
+        expiryDate: document.getElementById('expiry-date').value,
+        cvv: document.getElementById('cvv').value
+      };
+    } else if (method === 'upi') {
+      paymentInfo = {
+        method: 'UPI'
+      };
+    } else if (method === 'netbanking') {
+      paymentInfo = {
+        method: 'Net Banking'
+      };
+    }
+    console.log('Processing payment:', paymentInfo);
+    // Here you can implement the logic to actually process the payment
+  }
+</script>
+
+</body>
+</html>
